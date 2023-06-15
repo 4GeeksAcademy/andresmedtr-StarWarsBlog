@@ -16,12 +16,29 @@ const getState = ({ getStore, getActions, setStore }) => {
       people: [],
       planets: [],
       vehicles: [],
+      favorites: [],
     },
     actions: {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
+
+      addFavorites: (name) => {
+        const store = getStore();
+        setStore({ favorites: [...store.favorites, name] });
+        console.log("Favorites: ", store.favorites);
+      },
+
+      deleteItem: (i) => {
+        const store = getStore();
+        let newFavorites = store.favorites.filter((item, index) => {
+          return i != index;
+        });
+        setStore({ favorites: [newFavorites] });
+        console.log("New Favorites: ", newFavorites);
+      },
+
       loadSomeData: () => {
         fetch("https://swapi.dev/api/people/")
           .then((res) => res.json())

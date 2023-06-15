@@ -1,0 +1,23 @@
+.buttonContainer {
+  display: flex;
+  justify-items: center;
+}
+
+.favorites {
+  background-color: rgb(202, 174, 102);
+  border-radius: 20px;
+  margin-left: auto;
+  text-align: end;
+  justify-content: end;
+  padding-right: 1rem;
+  display: flex;
+}
+
+.btn {
+  border-radius: 20px;
+  justify-content: start;
+  padding-left: 1rem;
+  display: flex;
+  text-align: start;
+  margin-right: auto;
+}

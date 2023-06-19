@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../../styles/cards.css";
 import { useContext } from "react";
 import { Context } from "../../store/appContext";
@@ -29,10 +29,7 @@ const CharacterCard = (props) => {
             </button>
           </Link>
           <button
-            // {store.favorites.includes(item)
-            //   ? alert("Element already on the list")
-            //   : {item}}
-            className="favorites"
+            className="favoritesCards"
             onClick={() => {
               if (store.favorites.includes(props.item.name)) {
                 alert("Element already on the list");
@@ -40,7 +37,9 @@ const CharacterCard = (props) => {
                 actions.addFavorites(props.item.name);
               }
             }}>
-            Like
+            <div style={{ marginLeft: "10px" }}>
+              <i className="fa-solid fa-star" style={{ color: "#ffd43b" }}></i>
+            </div>
           </button>
         </div>
       </div>

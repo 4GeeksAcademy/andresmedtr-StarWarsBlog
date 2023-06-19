@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         let newFavorites = store.favorites.filter((item, index) => {
           return i != index;
         });
-        setStore({ favorites: [newFavorites] });
+        setStore({ favorites: newFavorites });
         console.log("New Favorites: ", newFavorites);
       },
 
@@ -64,6 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           })
           .catch((err) => console.error(err));
       },
+
       changeColor: (index, color) => {
         //get the store
         const store = getStore();

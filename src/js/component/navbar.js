@@ -10,6 +10,7 @@ export const Navbar = (props) => {
   const [showHover, setShowHover] = useState(-1);
 
   return (
+    // STARTING IMAGE LOGO SENDING HOME ON CLICK
     <nav className="navbar navbar-light bg-secondary mb-3">
       <Link to="/">
         <img
@@ -17,8 +18,13 @@ export const Navbar = (props) => {
           className="navbar-brand mb-0 h1 starwars"
         />
       </Link>
+
       {/* SEARCH BAR */}
-      <SearchBar id={props.id} />
+
+      <SearchBar item={store.people} />
+
+      {/* FAVORITES DROPDOWN LIST */}
+
       <div className="dropdown ml-auto">
         <button
           className="btn btn-warning dropdown-toggle me-5 favorites"

@@ -1,18 +1,33 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   const { store, actions } = useContext(Context);
   const [textInput, setTextInput] = useState("");
+  const [selectData, setSelectData] = useState("");
   const navigate = useNavigate();
+  console.log("input: ", textInput);
+
   const peopleArray = store.people.map((person) => person.name);
   const vehiclesArray = store.vehicles.map((vehicle) => vehicle.name);
   const planetsArray = store.planets.map((planet) => planet.name);
 
   const combinedArray = [...peopleArray, ...vehiclesArray, ...planetsArray];
-  // Filter the peopleArray based on the current text input
+
+  //
+  const handleSearch = (e) => {
+    e.preventDefault();
+    for (let i = 0; i < peopleArray.length; i++) {
+      if (peopleArray[i].toLowerCase() === textInput.toLowerCase())
+        navigate("/people/" + i);
+      else if (vehiclesArray[i].toLowerCase() === textInput.toLowerCase())
+        navigate("/vehicles/" + i);
+      else if (planetsArray[i].toLowerCase() === textInput.toLowerCase())
+        navigate("/planets/" + i);
+    }
+  };
+
   const filteredArray = combinedArray.filter(
     (item) =>
       item.toLowerCase().includes(textInput.toLowerCase()) && item !== textInput
@@ -33,13 +48,15 @@ const SearchBar = (props) => {
         <datalist id="people-list">
           {filteredArray.length > 0 &&
             filteredArray.map((item, index) => (
-              <option key={index}>{item}</option>
+              <option key={index} value={item}>
+                {item}
+              </option>
             ))}
         </datalist>
         <button
           className="btn btn-success"
           type="submit"
-          onClick={() => navigate(`/people/${props.id}`)}>
+          onClick={(e) => handleSearch(e)}>
           Search
         </button>
       </form>

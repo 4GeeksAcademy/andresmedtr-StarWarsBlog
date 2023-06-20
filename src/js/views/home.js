@@ -9,16 +9,14 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
   return (
     <div className="mt-5 bg bg-dark">
-      <div className="cardsTitleHolder" style={{ border: "5px red" }}>
-        <h1 className="descriptionTitle" style={{ marginTop: "5px red" }}>
-          Characters
-        </h1>
+      <div className="cardsTitleHolder">
+        <h1 className="descriptionTitle">Characters</h1>
       </div>
       <div className="d-flex justify-content-center">
         <div className="d-flex cardDisplay bg-black">
           {store.people.map((item, index) => {
             return (
-              <span style={{ width: "2000px" }}>
+              <span style={{ width: "2000px" }} key={index}>
                 <CharacterCard
                   item={item}
                   key={index}
@@ -37,7 +35,7 @@ export const Home = () => {
         <div className="d-flex cardDisplay bg-black">
           {store.planets.map((planet, index) => {
             return (
-              <span style={{ width: "1000px" }}>
+              <span style={{ width: "1000px" }} key={index}>
                 <PlanetsCard
                   planet={planet}
                   key={index}
@@ -57,7 +55,7 @@ export const Home = () => {
         <div className="d-flex cardDisplay bg-black">
           {store.vehicles.map((vehicle, index) => {
             return (
-              <span style={{ width: "1000px" }}>
+              <span style={{ width: "1000px" }} key={index}>
                 <VehiclesCard
                   vehicle={vehicle}
                   key={index}

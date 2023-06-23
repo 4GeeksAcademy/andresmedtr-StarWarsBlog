@@ -27,7 +27,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       addFavorites: (name) => {
         const store = getStore();
         setStore({ favorites: [...store.favorites, name] });
-        console.log("Favorites: ", store.favorites);
       },
 
       deleteItem: (i) => {
@@ -36,7 +35,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           return i != index;
         });
         setStore({ favorites: newFavorites });
-        console.log("New Favorites: ", newFavorites);
       },
 
       loadSomeData: () => {

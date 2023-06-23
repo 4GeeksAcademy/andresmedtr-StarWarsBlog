@@ -7,7 +7,6 @@ const SearchBar = () => {
   const [textInput, setTextInput] = useState("");
   const [selectData, setSelectData] = useState("");
   const navigate = useNavigate();
-  console.log("input: ", textInput);
 
   const peopleArray = store.people.map((person) => person.name);
   const vehiclesArray = store.vehicles.map((vehicle) => vehicle.name);

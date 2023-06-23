@@ -7,7 +7,6 @@ export const PeopleView = () => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const info = store.people.find((person, idx) => idx == params.id);
-  console.log("Info:", info);
   return (
     <div className="container">
       <div className="row mb-4">
@@ -20,7 +19,24 @@ export const PeopleView = () => {
           />
         </div>
         <div className="col text-white">
-          <h1 className="text-center">{info.name}</h1>
+          <div className="d-flex justify-content-center">
+            <h1 className="text-center">{info.name}</h1>
+            <button
+              className="favoritesCards"
+              onClick={() => {
+                if (store.favorites.includes(info.name)) {
+                  alert("Element already on the list");
+                } else {
+                  actions.addFavorites(info.name);
+                }
+              }}>
+              <div style={{ marginLeft: "10px" }}>
+                <i
+                  className="fa-solid fa-star"
+                  style={{ color: "#ffd43b" }}></i>
+              </div>
+            </button>
+          </div>
           <p>
             Veniam irure veniam sit incididunt excepteur magna excepteur non
             aute ut. Nisi irure consectetur enim ullamco irure ad. Tempor eu
@@ -78,7 +94,24 @@ export const PlanetsView = () => {
           />
         </div>
         <div className="col text-white">
-          <h1 className="text-center">{info.name}</h1>
+          <div className="d-flex justify-content-center">
+            <h1 className="text-center">{info.name}</h1>
+            <button
+              className="favoritesCards"
+              onClick={() => {
+                if (store.favorites.includes(info.name)) {
+                  alert("Element already on the list");
+                } else {
+                  actions.addFavorites(info.name);
+                }
+              }}>
+              <div style={{ marginLeft: "10px" }}>
+                <i
+                  className="fa-solid fa-star"
+                  style={{ color: "#ffd43b" }}></i>
+              </div>
+            </button>
+          </div>
           <p>
             Veniam irure veniam sit incididunt excepteur magna excepteur non
             aute ut. Nisi irure consectetur enim ullamco irure ad. Tempor eu
@@ -134,7 +167,24 @@ export const VehiclesView = () => {
           />
         </div>
         <div className="col text-white">
-          <h1 className="text-center">{info.name}</h1>
+          <div className="d-flex justify-content-center">
+            <h1 className="text-center">{info.name}</h1>
+            <button
+              className="favoritesCards"
+              onClick={() => {
+                if (store.favorites.includes(info.name)) {
+                  alert("Element already on the list");
+                } else {
+                  actions.addFavorites(info.name);
+                }
+              }}>
+              <div style={{ marginLeft: "10px" }}>
+                <i
+                  className="fa-solid fa-star"
+                  style={{ color: "#ffd43b" }}></i>
+              </div>
+            </button>
+          </div>
           <p>
             Veniam irure veniam sit incididunt excepteur magna excepteur non
             aute ut. Nisi irure consectetur enim ullamco irure ad. Tempor eu

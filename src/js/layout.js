@@ -5,7 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/Navbar";
+import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { PeopleView, PlanetsView, VehiclesView } from "./views/aboutus";
 

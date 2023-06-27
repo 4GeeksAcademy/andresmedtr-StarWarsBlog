@@ -8,7 +8,7 @@ const CharacterCard = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="card bg bg-secondary">
+    <div className="card bg bg-secondary cardNumber1">
       <img
         src={`https://starwars-visualguide.com/assets/img/characters/${
           props.id + 1

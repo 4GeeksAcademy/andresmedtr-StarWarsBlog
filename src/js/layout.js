@@ -7,7 +7,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar";
 import { Footer } from "./component/footer";
-import { PeopleView, PlanetsView, VehiclesView } from "./views/about";
+import { PeopleView, PlanetsView, VehiclesView } from "./views/aboutus";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";

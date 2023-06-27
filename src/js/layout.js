@@ -22,7 +22,7 @@ const Layout = () => {
             <Route path="/people/:id" element={<PeopleView />} />
             <Route path="/planets/:id" element={<PlanetsView />} />
             <Route path="/vehicles/:id" element={<VehiclesView />} />
-            <Route path="*" element={<h1>Not found!</h1>} />
+            <Route path="*" element={<h1>Not found</h1>} />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
